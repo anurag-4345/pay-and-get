@@ -37,7 +37,28 @@ let ToggleElements = (e, props) => {
       }, 800)
     })
   }, 800)
+  localStorage.setItem("login",JSON.stringify(["123@123.com","123"]))
 }
 
 loginBtn.addEventListener('click', ToggleElements, false)
 sideBtn.addEventListener('click', ToggleElements, false)
+
+const email = document.getElementById("email");
+const pass = document.getElementById("pass");
+const login = document.querySelector(".login");
+
+  login.addEventListener("click",(e)=>{
+    e.preventDefault();
+    // localStorage.setItem("log",JSON.stringify([email.value,pass.value]))
+    const data = JSON.parse(localStorage.getItem("login"));
+      if(data[0] === email.value && data[1] === pass.value){
+        console.log(true);
+        window.location.pathname = "/create/reg"
+      }else{
+        document.getElementById("emailError").innerText = "Enter Right email or password"
+        document.getElementById("emailError").style.color = "red"
+        document.body.style.backgroundColor = "white"
+        email.value = ""
+        pass.value = ""
+      }
+  })

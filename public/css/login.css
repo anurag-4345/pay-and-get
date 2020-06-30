@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.input,button {
+    border: 1px solid black;
+    margin: 35px 35px;
+    padding: 18px 19px;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 1rem;
+}
+button{
+    color:black;
+    font-size: 1.9rem;
+}
+body{
+    background-color: royalblue;
+    text-align: center;
+}
+h1{
+    font-size: 2.7rem;
+}

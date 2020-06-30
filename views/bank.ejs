@@ -4,27 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome admin</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/login.css" />
     <style>
-      button {
-        color: black;
-        font-size: 1.2rem;
-        padding: 10px 55px;
-        margin: 14px 58px;
-        background-color: skyblue;
-      }
-      button:hover {
-        background-color: white;
-      }
-      * {
-        margin: 5px;
-      }
+      #btn{
+        padding: 7px 40px !important;
+        }
     </style>
   </head>
   <body>
     <h2>Enter your details</h2>
-    <form action="" method="post">
+    <form action="/create/banksData" method="post">
       <div class="box-1">
         <label for="bank">Bank Name</label>
         <input
@@ -74,7 +64,7 @@
           name="Account"
           id="Account"
         />
-        <button type="submit">Submit</button>
+        <button type="submit" id="btn" >Submit</button>
       </div>
     </form>
   </body>
