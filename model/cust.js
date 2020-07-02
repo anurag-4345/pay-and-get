@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 const { URI, URL } = require("../config/keys")
 
+<<<<<<< HEAD
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+=======
+mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true},()=>{
+>>>>>>> 9433e29f87f17b15e637d549a71a7e16bddac046
     console.log('connect mongoodb');
 })
 const conn = mongoose.connection

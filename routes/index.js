@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const records = require("../model/cust")
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('login');
@@ -24,8 +25,10 @@ router.post('/reg', function(req, res, next) {
 
   userRecord.save((err,data)=>{
     if(err) throw err;
+    console.log('save file');
     res.send('Done',data);
   })
+
 });
 
 
