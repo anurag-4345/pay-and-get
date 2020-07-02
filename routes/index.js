@@ -19,7 +19,7 @@ router.post('/reg', function(req, res, next) {
     address:req.body.address,
     pinCode:req.body.pin,
     date:Date.now(),
-    status:req.body.status,
+    status:true,
   })
 
   userRecord.save((err,data)=>{
