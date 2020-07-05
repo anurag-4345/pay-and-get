@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 // const mongoose = require("mongoose");
-const records = require("../model/cust")
+const {details} = require("../model/cust")
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,8 +11,8 @@ router.get('/home', function(req, res, next) {
     res.render('home');
 });
 
-router.post('/reg', function(req, res, next) {
-    const Record = new records({
+router.post('/regs', (req, res, next) => {
+    const Record = new details({
         name: req.body.name,
         category: req.body.cat,
         mobile: req.body.mobile,
@@ -24,7 +24,8 @@ router.post('/reg', function(req, res, next) {
     })
     Record.save((err, data) => {
         if (err) throw err
-        res.send('Done', data);
+        console.log('Done', data);
+        res.status(200).redirect("/create/bank");
     })
 });
 

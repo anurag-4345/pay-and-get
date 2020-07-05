@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enter Business Details</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/login.css" />
+    <!-- <link rel="stylesheet" href="./css/login.css" /> -->
     <style>
       #btn {
-        padding: 10px 0px ;
+        padding: 10px 0px;
         max-width: 20vw;
         min-width: 20vw;
         background-color: aliceblue;
@@ -16,14 +16,14 @@
     </style>
   </head>
   <body>
-    <h2>Create Connection</h2>
+    <h2 class="heading">Create New Connection </h2>
     <div class="container">
-      <form class="business-form" action="/bank.html" method="post">
+      <form  action="/bank.html" method="post">
         <div class="box-1">
           <label for="name"> Business Name</label>
           <input
             type="text"
-            placeholder="Enter The Business Name"
+            placeholder="Business Name"
             required
             name="name"
             id="name"
@@ -41,7 +41,7 @@
           <label for="mobile">Mobile no</label>
           <input
             type="number"
-            placeholder="Enter the mobile number"
+            placeholder="Mobile number"
             required
             name="mobile"
             id="mobile"
@@ -51,7 +51,7 @@
           <label for="email-1">Email</label>
           <input
             type="email"
-            placeholder="Enter the email"
+            placeholder="Email"
             required
             name="email"
             id="email-1"
@@ -59,27 +59,32 @@
         </div>
         <div class="box-1">
           <label for="address">Address</label>
-          <textarea
+          <input
+            type="text"
+            name="address"
+            id="address"
+            rows="5"
+            placeholder="Address"
+          />
+          <!-- <textarea
             name="address"
             id="address"
             rows="5"
             placeholder="Enter the address"
-          ></textarea>
+          ></textarea> -->
         </div>
         <div class="box-1">
           <label for="pin">Pin Code</label>
           <input
             type="number"
-            placeholder="Enter the pin-code"
+            placeholder="Pin Code"
             required
             name="pin"
             id="pin"
           />
         </div>
         <div class="box-1">
-           
-            <a id="btn" href="bank.html">Next</a>
-           
+          <a id="btn" href="bank.html">Next</a>
         </div>
       </form>
     </div>

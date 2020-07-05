@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enter Business Details</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/login.css" />
     <style>
       #btn {
-        padding: 10px 0px ;
-        max-width: 20vw;
-        min-width: 20vw;
+        padding: 10px 0px;
+        min-width: 40vw;
         background-color: aliceblue;
+      }
+      label {
+        font-size: 1.1rem;
       }
     </style>
   </head>
   <body>
-    <h2>Create Connection</h2>
+    <h2 class="heading">Create New Connection</h2>
     <div class="container">
-      <form class="business-form" action="/create/regs" method="post">
+      <form class="back-gd" action="/regs" method="post">
         <div class="box-1">
           <label for="name"> Business Name</label>
           <input
@@ -31,7 +32,7 @@
         </div>
         <div class="box-1">
           <label for="cate"> Category</label>
-          <select required name="category" id="cate">
+          <select name="cat" required name="category" id="cate">
             <option value="food"> Food </option>
             <option value="mobile"> Mobile </option>
             <option value="Repair"> Repair </option>
@@ -59,12 +60,13 @@
         </div>
         <div class="box-1">
           <label for="address">Address</label>
-          <textarea
+          <input
+          type="text"
             name="address"
             id="address"
             rows="5"
             placeholder="Enter the address"
-          ></textarea>
+          >
         </div>
         <div class="box-1">
           <label for="pin">Pin Code</label>
@@ -72,12 +74,12 @@
             type="number"
             placeholder="Enter the pin-code"
             required
-            name="pin"
+            name="pinCode"
             id="pin"
           />
         </div>
         <div class="box-1">
-            <button id="btn" href="">Next</button>
+          <button id="btn" href="">Next</button>
         </div>
       </form>
     </div>
