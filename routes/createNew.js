@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+var express = require('express');
+var router = express.Router();
+const {} = require("../model/cust")
+
+/* GET users listing. */
+
+router.get('/reg', function(req, res, next) {
+    res.render('registration');
+});
+
+router.post('/regs', function(req, res, next) {
+    const Record = new records({
+        name: req.body.name,
+        category: req.body.cat,
+        mobile: req.body.mobile,
+        email: req.body.email,
+        address: req.body.address,
+        pinCode: req.body.pinCode,
+        date: Date.now(),
+        status: true,
+    })
+    Record.save((err, data) => {
+        if (err) throw err
+            // res.send('Done', data);
+        res.redirect('/create/bank');
+    })
+});
+=======
 var express = require('express')
 var router = express.Router()
 const { details } = require('../model/cust')
@@ -14,6 +43,7 @@ router.get('/reg', function (req, res, next) {
 // router.post('/regs', function(req, res, next) {
 //     res.redirect('/create/bank');
 // });
+>>>>>>> f109e3e31f86641bde8b83c56f7e93a11d99f874
 
 router.get('/bank', function (req, res, next) {
   res.render('bank')
