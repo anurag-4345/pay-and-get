@@ -1,26 +1,25 @@
-const mongoose = require("mongoose");
-const { URI, URL } = require("../config/keys")
+const mongoose = require('mongoose')
+const { URI, URL } = require('../config/keys')
 
-mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const modalRecord = new mongoose.Schema({
-    name: String,
-    category: String,
-    mobile: Number,
-    email: String,
-    address: String,
-    pinCode: Number,
-    date: Date,
-    status: Boolean,
-    Bank: {
-        B_name: String,
-        BranchName: String,
-        ifscCode: String,
-        account: String,
-        B_date: Date
-    },
-    amount: Array
+  name: String,
+  category: String,
+  mobile: Number,
+  email: String,
+  address: String,
+  pinCode: Number,
+  date: Date,
+  status: Boolean,
+  BDetails: {
+      B_name: String,
+      BranchName: String,
+      ifscCode: String,
+      account: Number
+  },
+  amount: Array
 })
 
-let records = mongoose.model("record", modalRecord);
-module.exports.models = records;
+const records = mongoose.model("customer", modalRecord);
+module.exports.details = records
