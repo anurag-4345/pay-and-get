@@ -1,7 +1,7 @@
 var express = require('express')
 var router = express.Router()
 const { details } = require('../model/cust')
-var ls = require('local-storage')
+// var ls = require('local-storage')
 
 /* GET users listing. */
 

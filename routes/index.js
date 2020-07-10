@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var ls = require('local-storage');
+// var ls = require('local-storage');
 const {details} = require("../model/cust")
 
 /* GET home page. */
