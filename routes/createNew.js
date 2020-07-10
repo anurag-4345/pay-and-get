@@ -1,7 +1,6 @@
 var express = require('express')
 var router = express.Router()
 const { details } = require('../model/cust')
-// var ls = require('local-storage')
 
 /* GET users listing. */
 
@@ -21,9 +20,8 @@ router.get('/bank', function (req, res, next) {
 })
 
 router.post('/banksData', function (req, res, next) {
-  let mob = ls.get('mob')
   let dates = details.findOneAndUpdate(
-    { mobile: mob },
+    { mobile: req.body.addMob },
     {
       $set: {
         'bank.0.B_name': req.body.B_name,

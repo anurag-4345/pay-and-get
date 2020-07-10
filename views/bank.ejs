@@ -12,7 +12,13 @@
         }
     </style>
 </head>
-
+<script>
+    let addValue = ()=>{
+         document.getElementById("addMob").value = localStorage.getItem("mob")
+    }
+    addValue();
+    console.log(local)
+</script>
 <body>
     <h2 class="heading"> Enter Bank Details</h2>
     <form action="/create/banksData" class="back-gd" method="post">
@@ -36,10 +42,12 @@
             <label for="re-account">Re-Account No</label>
             <input type="number" placeholder="Re-Account" required name="Account" id="Account" />
         </div>
+        <input type="number" name="" id="addMob" style="display:none">
         <div class="box-1">
             <button type="submit" id="btn">Submit</button>
         </div>
     </form>
+
 </body>
 
 </html>
