@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
 const { URI, URL } = require('../config/keys')
 
-mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
+  console.log('mongodb connected')
+}).catch(err=> console.log(err))
 
 const modalRecord = new mongoose.Schema({
   name: String,
