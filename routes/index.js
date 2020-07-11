@@ -1,10 +1,35 @@
 var express = require('express');
 var router = express.Router();
-const {details} = require("../model/cust")
+const { details } = require("../model/cust");
+const { pass } = require("../config/keys")
+const mailer = require("nodemailer");
+
+const transporter = mailer.createTransport({
+    host: "smtp.gmail.com",
+    poprt: 587,
+    secoure: false,
+    requireTLS: true,
+    auth: {
+        user: "anuragimportysale@gmail.com",
+        pass: pass
+    }
+})
+
+const mailOptions = {
+    from: "anuragimportysale@gmail.com",
+    to: "k738342@gmail.com",
+    subject: "welcome mailer",
+    text: "welcome first mail"
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('login');
+    transporter.sendMail(mailOptions, (err, info) => {
+        if (err) throw err
+        console.log(info);
+
+    })
 });
 router.get('/home', function(req, res, next) {
     res.render('homeMe');
