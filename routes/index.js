@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-// var ls = require('local-storage');
 const {details} = require("../model/cust")
 
 /* GET home page. */
@@ -20,9 +19,8 @@ router.post('/regs', (req, res, next) => {
         address: req.body.address,
         pinCode: req.body.pinCode,
         date: Date.now(),
-        status: true,
+        status: true
     })
-    ls.set("mob",req.body.mobile)
     Record.save((err, data) => {
         if (err) throw err
         console.log('Done', data);
