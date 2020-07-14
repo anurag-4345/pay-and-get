@@ -68,3 +68,8 @@ section {
   margin: 0px;
   padding: 0px;
 }
+.delete{
+  color:red;
+  background-color: crimson;
+  font-size:0.6rem;
+}
