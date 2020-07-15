@@ -1,13 +1,10 @@
 import React from 'react'
-// import Login from './components/login'
-// import Bank from './components/bank'
-// import Reg from './components/Reg'
-import HomeMe from './components/HomeMe'
+import Handler from "./components/Handler"
 
 function App () {
   return (
     <div>
-      <HomeMe/>
+      <Handler/>
     </div>
   )
 }
