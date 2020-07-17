@@ -9,7 +9,7 @@ class Handler extends Component {
   render () {
     return (
       <section style={{margin:"0px",padding:"0px"}}>
-        <Home />v
+        <Home />
         <Join />
         <Profile />
         <Record />

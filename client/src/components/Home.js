@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../css/Home page.css'
+import Slider from './slider'
 class Home extends Component {
   render () {
     return (
@@ -22,7 +23,7 @@ class Home extends Component {
                 value='Submit'
                 className='inputTag'
                 id='payBtn'
-                style={{display:"none"}}
+                style={{ display: 'none' }}
               />
             </form>
           </div>
@@ -35,27 +36,8 @@ class Home extends Component {
             <h2>₹ CashBack</h2>
           </div>
         </section>
-        <h2 style={{textAlign:"center"}}>Service</h2>
-        <section className='item-head-2'>
-          <div className='item-body-2'>
-            <i className='fa fa-book' aria-hidden='true'></i> Record
-          </div>
-          <div className='item-body-2'>
-            <i className='fa fa-money' aria-hidden='true'></i> List
-          </div>
-          <div className='item-body-2'>
-            <i className='fa fa-fire' aria-hidden='true'></i> order
-          </div>
-          <div className='item-body-2'>
-            <i className='fa fa-calendar' aria-hidden='true'></i> Credit
-          </div>
-          <div className='item-body-2'>
-            <i className='fa fa-money'></i> Grow Business
-          </div>
-          <div className='item-body-2'>
-            <i className='fa fa-question' aria-hidden='true'></i> FAQ
-          </div>
-        </section>
+        <h2 style={{ textAlign: 'center' }}>Service</h2>
+        <Slider item={["item-1","item-2","item-3","item-4"]} />
         <section className='item-head-1'>
           <div className='item-body-1'>
             our service <i className='fa fa-arrow-right' aria-hidden='true'></i>
