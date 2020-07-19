@@ -6,16 +6,16 @@ class footer extends Component {
         return (
             <footer className='foot-head'>
             <div className='foot-body'>
-              <i className='fa fa-home' aria-hidden='true'></i>
+              <i className='fa fa-home' aria-hidden='true'></i>1
             </div>
             <div className='foot-body'>
-              <i className='fa fa-comment'></i>
+              <i className='fa fa-comment'></i>2
             </div>
             <div className='foot-body'>
-              <i className='fa fa-calendar'></i>
+              <i className='fa fa-calendar'></i>3
             </div>
             <div className='foot-body'>
-              <i className='fa fa-cog' aria-hidden='true'></i>
+              <i className='fa fa-cog' aria-hidden='true'></i>4
             </div>
           </footer>
         )

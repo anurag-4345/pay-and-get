@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../css/Home page.css'
 
-class JoinComp extends Component {
+class JoinComp extends React.Component {
   render () {
     return (
       <section className='Join'>

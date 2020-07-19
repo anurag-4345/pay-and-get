@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "../css/Home page.css"
 
 class profile extends Component {
   render () {
@@ -6,7 +7,7 @@ class profile extends Component {
       <section className='profile'>
         <section className='item-head-1'>
           <div className='pro-de'>
-            <img className='pro' src='/images/header.jpg' alt='' />
+           <i className="fa fa-window-minimize    "></i>
             <h1>Ram</h1>
           </div>
           <div className='item-body-1'>

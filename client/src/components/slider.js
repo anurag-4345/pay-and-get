@@ -9,7 +9,7 @@ class Slider extends Component {
     // const block = this.props.item
     return (
       <section className='item-head-2'>
-        <div className='item-body-2'>
+        {/* <div className='item-body-2'>
           <i className='fa fa-book' aria-hidden='true'></i> {this.props.item[1]}
         </div>
         <div className='item-body-2'>
@@ -17,7 +17,7 @@ class Slider extends Component {
         </div>
         <div className='item-body-2'>
           <i className='fa fa-book' aria-hidden='true'></i> {this.props.item[3]}
-        </div>
+        </div> */}
         <div className='item-body-2'>
           <i className='fa fa-money' aria-hidden='true'></i> List
         </div>
@@ -26,6 +26,9 @@ class Slider extends Component {
         </div>
         <div className='item-body-2'>
           <i className='fa fa-calendar' aria-hidden='true'></i> Credit
+        </div>
+        <div className='item-body-2'>
+          <i className='fa fa-calendar' aria-hidden='true'></i> Debit
         </div>
         <div className='item-body-2'>
           <i className='fa fa-money'></i> Grow Business

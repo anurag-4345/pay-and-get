@@ -184,10 +184,6 @@ h2 {
     color: white;
 }
 
-.Join {
-    display: none;
-}
-
 
 /* Report  */
 
@@ -224,10 +220,6 @@ td:hover {
     border-radius: 5px;
 }
 
-.record {
-    display: none;
-}
-
 
 /*      Profile Block  */
 
@@ -238,17 +230,6 @@ td:hover {
     min-height: 140vh;
 }
 
-.Join {
-    display: none;
-}
-
-.record {
-    display: none;
-}
-
-.profile {
-    display: none;
-}
 .pro-de {
     display: flex;
     flex-flow: column wrap;
