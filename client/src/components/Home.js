@@ -1,7 +1,24 @@
 import React, { Component } from 'react'
 import '../css/Home page.css'
-import Slider from './slider'
+import BodyBLock from './BodyBlock'
+import Hander from '../img/QrCode.png'
 class Home extends Component {
+  constructor (prop) {
+    super(prop)
+    this.state = { btn: false, showData: false, img: false, inputTag: false }
+  }
+  checkAmountValue = e => {
+    this.setState({
+      showData: e.target.value > 0 ? e.target.value : false,
+      btn: true
+    })
+  }
+  showQR = () => {
+    this.setState({ img: true, btn: false, inputTag: true })
+  }
+  backFunction = () => {
+    this.setState({ btn: false, showData: false, img: false, inputTag: false })
+  }
   render () {
     return (
       <section className='home'>
@@ -12,46 +29,48 @@ class Home extends Component {
           </div>
           <div className='head'>
             <form action='/' method='post'>
-              <input
-                type='number'
-                className='inputTag'
-                name='rec'
-                placeholder='Pay get cashback'
-              />
-              <input
-                type='button'
-                value='Submit'
-                className='inputTag'
-                id='payBtn'
-                style={{ display: 'none' }}
-              />
+              {this.state.inputTag === false && (
+                <input
+                  type='number'
+                  className='inputTag'
+                  name='rec'
+                  placeholder='Pay get cashback'
+                  onChange={this.checkAmountValue}
+                />
+              )}{' '}
+              {this.state.btn !== false && (
+                <div className='AmountSec'>
+                  <input
+                    type='button'
+                    value='Get Money'
+                    className='inputTag'
+                    id='payBtn'
+                    onClick={this.showQR}
+                  />
+                  <h2> ₹ {this.state.showData} </h2>
+                </div>
+              )}
+              {this.state.img !== false && (
+                <div className='AmountSec'>
+                  <h2> ₹ {this.state.showData} </h2>
+                  <img
+                    src={Hander}
+                    className='AmountSecImg'
+                    alt={'QR code'}
+                  />{' '}
+                  <br />
+                  <input
+                    className='inputTag'
+                    type='button'
+                    onClick={this.backFunction}
+                    value='Back'
+                  />
+                </div>
+              )}
             </form>
           </div>
         </section>
-        <section className='item-head'>
-          <div className='item-body'>
-            <h2>₹ Today</h2>
-          </div>
-          <div className='item-body'>
-            <h2>₹ CashBack</h2>
-          </div>
-        </section>
-        <h2 style={{ textAlign: 'center' }}>Service</h2>
-        <Slider item={["item-1","item-2","item-3","item-4"]} />
-        <section className='item-head-1'>
-          <div className='item-body-1'>
-            our service <i className='fa fa-arrow-right' aria-hidden='true'></i>
-          </div>
-          <div className='item-body-1'>
-            Loan Policy <i className='fa fa-arrow-right' aria-hidden='true'></i>
-          </div>
-          <div className='item-body-1'>
-            Contact us <i className='fa fa-arrow-right' aria-hidden='true'></i>
-          </div>
-          <div className='item-body-1'>
-            Setting <i className='fa fa-arrow-right' aria-hidden='true'></i>
-          </div>
-        </section>
+        {this.state.showData === false && <BodyBLock />}
       </section>
     )
   }

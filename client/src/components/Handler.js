@@ -9,7 +9,7 @@ class Handler extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      _nav: 4
+      _nav: 1
     }
   }
   render () {
