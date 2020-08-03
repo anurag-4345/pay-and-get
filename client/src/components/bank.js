@@ -36,16 +36,6 @@ class Bank extends Component {
 }
 export default Bank;
 
-{/* <script>
-// <link rel="stylesheet" href="/css/style.css" />
-    let addValue = ()=>{
-        document.getElementById("addMob").value = localStorage.getItem("mob")
-    }
-    addValue()
-    console.log(local)
 
-// <script src="/javascripts/bank.js">
-</script> 
-</script> */}
 
 
