@@ -1,6 +1,8 @@
 var express = require('express')
 var router = express.Router()
-const { details } = require('../model/cust')
+const {
+  details
+} = require('../model/cust')
 
 /* GET users listing. */
 
@@ -20,17 +22,16 @@ router.get('/bank', function (req, res, next) {
 })
 
 router.post('/banksData', function (req, res, next) {
-  let dates = details.findOneAndUpdate(
-    { mobile: req.body.addMob },
-    {
-      $set: {
-        'bank.0.B_name': req.body.B_name,
-        'bank.0.BranchName': req.body.BranchName,
-        'bank.0.ifscCode': req.body.ifscCode,
-        'bank.0.account': req.body.account
-      }
+  let dates = details.findOneAndUpdate({
+    mobile: req.body.addMob
+  }, {
+    $set: {
+      'bank.0.B_name': req.body.B_name,
+      'bank.0.BranchName': req.body.BranchName,
+      'bank.0.ifscCode': req.body.ifscCode,
+      'bank.0.account': req.body.account
     }
-  )
+  })
   dates.exec((err, data) => {
     console.log(data)
     res.status(200).redirect('/home')
