@@ -25,17 +25,17 @@ const mailOptions = {
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('login');
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) throw err
-        console.log(info);
+    // transporter.sendMail(mailOptions, (err, info) => {
+    //     if (err) throw err
+    //     console.log(info);
 
-    })
+    // })
 });
 router.get('/home', function(req, res, next) {
     res.render('homeMe');
 });
 
-router.post('/regs', (req, res, next) => {
+router.post('regs', (req, res, next) => {
     const Record = new details({
         name: req.body.name,
         category: req.body.cat,

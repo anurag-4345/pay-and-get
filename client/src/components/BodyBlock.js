@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import Slider from "./slider"
 
 class BodyBlock extends Component {
-  render () {
+
+  render() {
     return (
       <div>
         <section className='item-head'>
@@ -17,7 +18,7 @@ class BodyBlock extends Component {
         <Slider item={['item-1', 'item-2', 'item-3', 'item-4']} />
         <section className='item-head-1'>
           <div className='item-body-1'>
-            our service <i className='fa fa-arrow-right' aria-hidden='true'></i>
+            Our Service <i className='fa fa-arrow-right' aria-hidden='true'></i>
           </div>
           <div className='item-body-1'>
             Loan Policy <i className='fa fa-arrow-right' aria-hidden='true'></i>
@@ -25,9 +26,10 @@ class BodyBlock extends Component {
           <div className='item-body-1'>
             Contact us <i className='fa fa-arrow-right' aria-hidden='true'></i>
           </div>
-          <div className='item-body-1'>
+          <div className='item-body-1' onClick={this.props.onClick}>
             Setting <i className='fa fa-arrow-right' aria-hidden='true'></i>
           </div>
+
         </section>
       </div>
     )

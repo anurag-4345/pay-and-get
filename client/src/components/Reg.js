@@ -1,17 +1,40 @@
 import React, { Component } from 'react'
 import '../css/style.css'
 class Reg extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      name:"", cate:"" ,mobile:"",email:"",address:"",pincode:""
+    }
+  }
+
+  postData(){
+    fetch("http:localhost:3001/regs",{
+      method:"POST",
+      headers:{
+        "content-type":"application/x-www-form-urlencoded; charset=utf-8"
+      },
+      body:`name=${this.state.name}&category=${this.state.cate}&mobile=${this.state.mobile}&email=${this.state.email}&address=${this.state.address}&pinCode=${this.state.pincode}`
+    })
+  }
+  updateValue(event) {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({[name]: value});
+  }
+
   render () {
     return (
       <section>
         <h2 className='heading'>Create New Connection</h2>
         <div className='container'>
-          <form className='back-gd' action='/regs' method='post'>
+          <form  className='back-gd' onSubmit={()=> this.postData()}>
             <div className='box-1'>
               <label htmlFor='name'> Business Name</label>
-              <input
+              <input onChange={()=>this.updateValue.bind()}
                 type='text'
-                placeholder='Enter The Business Name'
+                placeholder='Business Name'
                 required
                 name='name'
                 id='name'
@@ -19,7 +42,7 @@ class Reg extends Component {
             </div>
             <div className='box-1'>
               <label htmlFor='cate'> Category</label>
-              <select name='cat' required name='category' id='cate'>
+              <select name='cat' onSelect={()=> this.updateValue.bind()} name='cate' id='cate'>
                 <option value='food'> Food </option>
                 <option value='mobile'> Mobile </option>
                 <option value='Repair'> Repair </option>
@@ -27,9 +50,9 @@ class Reg extends Component {
             </div>
             <div className='box-1'>
               <label htmlFor='mobile'>Mobile no</label>
-              <input
+              <input onChange={()=>this.updateValue.bind()}
                 type='number'
-                placeholder='Enter the mobile number'
+                placeholder='Mobile number'
                 required
                 name='mobile'
                 id='mobile'
@@ -37,9 +60,9 @@ class Reg extends Component {
             </div>
             <div className='box-1'>
               <label htmlFor='email-1'>Email</label>
-              <input
+              <input onChange={()=>this.updateValue.bind()}
                 type='email'
-                placeholder='Enter the email'
+                placeholder='Email'
                 required
                 name='email'
                 id='email-1'
@@ -47,19 +70,19 @@ class Reg extends Component {
             </div>
             <div className='box-1'>
               <label htmlFor='address'>Address</label>
-              <input
+              <input onChange={()=>this.updateValue.bind()}
                 type='text'
                 name='address'
                 id='address'
                 rows='5'
-                placeholder='Enter the address'
+                placeholder='Address'
               />
             </div>
             <div className='box-1'>
               <label htmlFor='pin'>Pin Code</label>
-              <input
+              <input onChange={()=>this.updateValue.bind()}
                 type='number'
-                placeholder='Enter the pin-code'
+                placeholder='Pin-code'
                 required
                 name='pinCode'
                 id='pin'

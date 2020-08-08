@@ -3,18 +3,8 @@ import React, { Component } from 'react'
 class Slider extends Component {
 
   render () {
-    // const block = this.props.item
     return (
       <section className='item-head-2'>
-        {/* <div className='item-body-2'>
-          <i className='fa fa-book' aria-hidden='true'></i> {this.props.item[1]}
-        </div>
-        <div className='item-body-2'>
-          <i className='fa fa-book' aria-hidden='true'></i> {this.props.item[2]}
-        </div>
-        <div className='item-body-2'>
-          <i className='fa fa-book' aria-hidden='true'></i> {this.props.item[3]}
-        </div> */}
         <div className='item-body-2'>
           <i className='fa fa-money' aria-hidden='true'></i> List
         </div>

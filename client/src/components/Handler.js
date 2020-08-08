@@ -4,12 +4,14 @@ import Join from './join'
 import Profile from './profile'
 import Record from './record'
 import 'font-awesome/css/font-awesome.min.css';
+import Bank from "./bank";
+import Reg from './Reg'
 
 class Handler extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      _nav: 1
+      _nav: 6
     }
   }
   render () {
@@ -19,6 +21,9 @@ class Handler extends Component {
         {this.state._nav === 2 && <Join />}
         {this.state._nav === 3 && <Record />}
         {this.state._nav === 4 && <Profile />}
+        {this.state._nav === 5 && <Bank />}
+        {this.state._nav === 6 && <Reg />}
+
         <footer className='foot-head'>
           <div className='foot-body' onClick={() => this.setState({ _nav: 1 })}>
             <i className='fa fa-home' aria-hidden='true'></i>
@@ -32,6 +37,7 @@ class Handler extends Component {
           <div className='foot-body' onClick={() => this.setState({ _nav: 4 })}>
             <i className='fa fa-cog' aria-hidden='true'></i>
           </div>
+        
         </footer>
       </section>
     )
