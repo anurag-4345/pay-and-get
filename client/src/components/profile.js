@@ -8,7 +8,7 @@ class profile extends Component {
       <section className='profile'>      
         <section className='item-head-1'>
           <div className='pro-de'>
-            <img className="pro" src={Img} />
+            <img alt="checker_log" className="pro" src={Img} />
             <h1>Ram</h1>
           </div>
             <div className='item-body-1' >

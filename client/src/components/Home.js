@@ -3,7 +3,7 @@ import '../css/Home page.css'
 import BodyBLock from './BodyBlock'
 import Hander from '../img/QrCode.png'
 class Home extends Component {
-  constructor (prop) {
+  constructor(prop) {
     super(prop)
     this.state = { btn: false, showData: false, img: false, inputTag: false }
   }
@@ -19,15 +19,15 @@ class Home extends Component {
   backFunction = () => {
     this.setState({ btn: false, showData: false, img: false, inputTag: false })
   }
-  render () {
+  render() {
     return (
       <section className='home'>
         <section className='header'>
-          <div className='head'>
+          <div>
             <h4>Pay and Get</h4>
             <h1>Cash back</h1>
           </div>
-          <div className='head'>
+          <div >
             <form action='/' method='post'>
               {this.state.inputTag === false && (
                 <input
@@ -37,7 +37,7 @@ class Home extends Component {
                   placeholder='Pay get cashback'
                   onChange={this.checkAmountValue}
                 />
-              )}{' '}
+              )}
               {this.state.btn !== false && (
                 <div className='AmountSec'>
                   <input
@@ -57,7 +57,7 @@ class Home extends Component {
                     src={Hander}
                     className='AmountSecImg'
                     alt={'QR code'}
-                  />{' '}
+                  />
                   <br />
                   <input
                     className='inputTag'

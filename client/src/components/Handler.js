@@ -11,7 +11,7 @@ class Handler extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      _nav: 6
+      _nav: 5
     }
   }
   render () {
@@ -21,8 +21,8 @@ class Handler extends Component {
         {this.state._nav === 2 && <Join />}
         {this.state._nav === 3 && <Record />}
         {this.state._nav === 4 && <Profile />}
-        {this.state._nav === 5 && <Bank />}
-        {this.state._nav === 6 && <Reg />}
+        {this.state._nav === 5 && <Reg />}
+        {this.state._nav === 6 && <Bank />}
 
         <footer className='foot-head'>
           <div className='foot-body' onClick={() => this.setState({ _nav: 1 })}>

@@ -2,37 +2,38 @@ import React, { Component } from 'react'
 import '../css/style.css'
 class Reg extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      name:"", cate:"" ,mobile:"",email:"",address:"",pincode:""
+      name: "", cate: "", mobile: "", email: "", address: "", pincode: ""
     }
   }
 
-  postData(){
-    fetch("http:localhost:3001/regs",{
-      method:"POST",
-      headers:{
-        "content-type":"application/x-www-form-urlencoded; charset=utf-8"
+  postData() {
+    fetch("http:localhost:3001/regs", {
+      method: "POST",
+      headers: {
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8"
       },
-      body:`name=${this.state.name}&category=${this.state.cate}&mobile=${this.state.mobile}&email=${this.state.email}&address=${this.state.address}&pinCode=${this.state.pincode}`
+      body: `name=${this.state.name}&cate=${this.state.cate}&mobile=${this.state.mobile}&email=${this.state.email}&address=${this.state.address}&pinCode=${this.state.pincode}`
     })
   }
+
   updateValue(event) {
     const name = event.target.name;
     const value = event.target.value;
-    this.setState({[name]: value});
+    this.setState({ [name]: value });
   }
 
-  render () {
+  render() {
     return (
       <section>
         <h2 className='heading'>Create New Connection</h2>
         <div className='container'>
-          <form  className='back-gd' onSubmit={()=> this.postData()}>
+          <form className='back-gd' onSubmit={() => this.postData.bind(this)}>
             <div className='box-1'>
               <label htmlFor='name'> Business Name</label>
-              <input onChange={()=>this.updateValue.bind()}
+              <input onChange={() => this.updateValue.bind(this)}
                 type='text'
                 placeholder='Business Name'
                 required
@@ -42,7 +43,7 @@ class Reg extends Component {
             </div>
             <div className='box-1'>
               <label htmlFor='cate'> Category</label>
-              <select name='cat' onSelect={()=> this.updateValue.bind()} name='cate' id='cate'>
+              <select name='cate' onSelect={() => this.updateValue.bind(this)} id='cate'>
                 <option value='food'> Food </option>
                 <option value='mobile'> Mobile </option>
                 <option value='Repair'> Repair </option>
@@ -50,7 +51,7 @@ class Reg extends Component {
             </div>
             <div className='box-1'>
               <label htmlFor='mobile'>Mobile no</label>
-              <input onChange={()=>this.updateValue.bind()}
+              <input onChange={() => this.updateValue.bind(this)}
                 type='number'
                 placeholder='Mobile number'
                 required
@@ -60,7 +61,7 @@ class Reg extends Component {
             </div>
             <div className='box-1'>
               <label htmlFor='email-1'>Email</label>
-              <input onChange={()=>this.updateValue.bind()}
+              <input onChange={() => this.updateValue.bind(this)}
                 type='email'
                 placeholder='Email'
                 required
@@ -70,7 +71,7 @@ class Reg extends Component {
             </div>
             <div className='box-1'>
               <label htmlFor='address'>Address</label>
-              <input onChange={()=>this.updateValue.bind()}
+              <input onChange={() => this.updateValue.bind(this)}
                 type='text'
                 name='address'
                 id='address'
@@ -80,7 +81,7 @@ class Reg extends Component {
             </div>
             <div className='box-1'>
               <label htmlFor='pin'>Pin Code</label>
-              <input onChange={()=>this.updateValue.bind()}
+              <input onChange={() => this.updateValue.bind(this)}
                 type='number'
                 placeholder='Pin-code'
                 required
@@ -89,7 +90,7 @@ class Reg extends Component {
               />
             </div>
             <div className='box-1'>
-              <button id='btn'>Next</button>
+              <button id='btn' >Submit</button>
             </div>
           </form>
         </div>

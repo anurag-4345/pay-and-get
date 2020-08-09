@@ -23,7 +23,7 @@ const mailOptions = {
 }
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     res.render('login');
     // transporter.sendMail(mailOptions, (err, info) => {
     //     if (err) throw err
@@ -31,11 +31,11 @@ router.get('/', function(req, res, next) {
 
     // })
 });
-router.get('/home', function(req, res, next) {
+router.get('/home', function (req, res, next) {
     res.render('homeMe');
 });
 
-router.post('regs', (req, res, next) => {
+router.post('/regs', (req, res, next) => {
     const Record = new details({
         name: req.body.name,
         category: req.body.cat,
@@ -49,7 +49,7 @@ router.post('regs', (req, res, next) => {
     Record.save((err, data) => {
         if (err) throw err
         console.log('Done', data);
-        res.status(200).redirect("/create/bank");
+        res.status(200).redirect("/Home");
     })
 });
 
