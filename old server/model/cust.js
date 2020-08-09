@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 const { URI, URL } = require('../config/keys')
 
-mongoose.connect(URL, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true }).then(() => {
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
   console.log('mongodb connected')
-}).catch(err => console.log(err))
+}).catch(err=> console.log(err))
 
 const modalRecord = new mongoose.Schema({
   name: String,
@@ -14,17 +14,13 @@ const modalRecord = new mongoose.Schema({
   pinCode: Number,
   date: Date,
   status: Boolean,
-  bank: {
-    BankName: String,
-    BranchName: String,
-    ifscCode: String,
-    account: Number,
+  BDetails: {
+      B_name: String,
+      BranchName: String,
+      ifscCode: String,
+      account: Number
   },
-  paymentDetails: {
-    amount: Number,
-    time: Date,
-    status: Boolean,
-  }
+  amount: Array
 })
 
 const records = mongoose.model("customer", modalRecord);
