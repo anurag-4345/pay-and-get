@@ -22,7 +22,6 @@ class Bank extends Component {
     createUser(event) {
         event.preventDefault()
         let value = localStorage.getItem("_id")
-        console.log(value);
         fetch(`http://localhost:3001/bankDetails/${value}`, {
             method: 'put',
             headers: {

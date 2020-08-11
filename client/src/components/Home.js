@@ -10,15 +10,28 @@ class Home extends Component {
   checkAmountValue = e => {
     this.setState({
       showData: e.target.value > 0 ? e.target.value : false,
-      btn: true
+      btn: true,
     })
   }
-  showQR = () => {
+
+  showQR(event) {
     this.setState({ img: true, btn: false, inputTag: true })
+    event.preventDefault()
+    let value = localStorage.getItem("_id")
+    fetch(`http://localhost:3001/amount/${value}`, {
+      method: 'put',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
+      },
+      body: `amount=${this.state.showData}`
+    })
   }
+
   backFunction = () => {
     this.setState({ btn: false, showData: false, img: false, inputTag: false })
   }
+
+
   render() {
     return (
       <section className='home'>
@@ -28,12 +41,12 @@ class Home extends Component {
             <h1>Cash back</h1>
           </div>
           <div >
-            <form action='/' method='post'>
+            <form >
               {this.state.inputTag === false && (
                 <input
                   type='number'
                   className='inputTag'
-                  name='rec'
+                  name='amount'
                   placeholder='Pay get cashback'
                   onChange={this.checkAmountValue}
                 />
@@ -45,7 +58,7 @@ class Home extends Component {
                     value='Get Money'
                     className='inputTag'
                     id='payBtn'
-                    onClick={this.showQR}
+                    onClick={this.showQR.bind(this)}
                   />
                   <h2> ₹ {this.state.showData} </h2>
                 </div>
