@@ -17,14 +17,21 @@ route.post("/basicDetails", (req, res, next) => {
     })
     data.save((err, data) => {
         if (err) throw err;
-        res.status(200).send(data)
+        console.log('data save ', data);
     })
 
 })
 
+route.get("/data/:email", (req, res, next) => {
+    details.find({ "email": req.body.email }).toArray((err, datalist) => {
+        if (err) throw err;
+        res.send(datalist)
+    })
+})
+
 //create bank details
 route.put("/bankDetails/:id", (req, res, next) => {
-    let data = details.findByIdAndUpdate(req.params.id,
+    let data = details.findOneAndUpdate({ "_id": req.params.id },
         {
             $set: {
                 bank: {
