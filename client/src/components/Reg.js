@@ -19,8 +19,9 @@ class Reg extends Component {
         "content-type": "application/x-www-form-urlencoded; charset=utf-8"
       },
       body: `name=${this.state.name}&cate=${this.state.cate}&mobile=${this.state.mobile}&email=${this.state.email}&address=${this.state.address}&pinCode=${this.state.pinCode}`
-    });
-    localStorage.setItem("email", this.state.email)
+    }).then(dd => dd.json()).then(ress => 
+      localStorage.setItem("_id", ress._id)
+      )
   }
 
   updateValue(event) {

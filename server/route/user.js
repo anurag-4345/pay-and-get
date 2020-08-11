@@ -2,6 +2,7 @@ const express = require("express");
 const route = express.Router();
 const { details } = require("../model/cust")
 const record = details.find({})
+const ObjId = require("mongodb").ObjectID;
 
 //new user data 
 route.post("/basicDetails", (req, res, next) => {
@@ -18,32 +19,33 @@ route.post("/basicDetails", (req, res, next) => {
     data.save((err, data) => {
         if (err) throw err;
         console.log('data save ', data);
+        res.send(data)
     })
 
 })
 
-route.get("/data/:email", (req, res, next) => {
-    details.find({ "email": req.body.email }).toArray((err, datalist) => {
+route.get("/data/:id", (req, res, next) => {
+    details.findById(ObjId(req.body.id), (err, data) => {
         if (err) throw err;
-        res.send(datalist)
+        res.send(data)
     })
 })
 
 //create bank details
 route.put("/bankDetails/:id", (req, res, next) => {
-    let data = details.findOneAndUpdate({ "_id": req.params.id },
+    let block = JSON.parse(JSON.stringify(req.body))
+    let data = details.findByIdAndUpdate(ObjId(req.params.id),
         {
             $set: {
                 bank: {
-                    BankName: req.body.bank,
-                    BranchName: req.body.branch,
-                    ifscCode: req.body.ifsc,
-                    account: req.body.acc,
+                    BankName: block.bank,
+                    BranchName: block.branch,
+                    ifscCode: block.ifsc,
+                    account: block.acc,
                 }
             }
         }
     )
-    console.log(req.body);
     data.exec((err, data) => {
         if (err) throw err;
         res.send("Bank details")
