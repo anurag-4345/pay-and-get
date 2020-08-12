@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome admin</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link rel="stylesheet" href="./css/login.css" /> -->
+    <style>
+      #btn{
+    padding: 7px 40px !important;
+}
+    </style>
+  </head>
+  <body>
+    <h2 class="heading">Enter Bank Details</h2>
+    <form action="" method="post">
+      <div class="box-1">
+        <label for="bank">Bank Name</label>
+        <input
+          type="text"
+          placeholder="Enter the bank name"
+          required
+          name="bank"
+          id="bank"
+        />
+      </div>
+      <div class="box-1">
+        <label for="branch">Branch Name</label>
+        <input
+          type="text"
+          placeholder="Enter the Branch"
+          required
+          name="branch"
+          id="branch"
+        />
+      </div>
+      <div class="box-1">
+        <label for="ifsc">IFSC Code</label>
+        <input
+          type="text"
+          placeholder="Enter the IFSC Code"
+          required
+          name="IFSC"
+          id="ifsc"
+        />
+      </div>
+      <div class="box-1">
+        <label for="account">Account No..</label>
+        <input
+          type="number"
+          placeholder="Enter the Account"
+          required
+          name="Account"
+          id="Account"
+        />
+      </div>
+      <div class="box-1">
+        <label for="re-account">Re-Account No..</label>
+        <input
+          type="number"
+          placeholder="Re-Enter the Account"
+          required
+          name="Account"
+          id="Account"
+        />
+        <button type="submit" id="btn" >Submit</button>
+      </div>
+    </form>
+  </body>
+</html>

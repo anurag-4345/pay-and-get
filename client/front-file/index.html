@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pay with me</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="head" id="heads">Pay & Get Cashback</h1>
+      <session class="btnSession">
+        <center>
+          <h3>Click and verify</h3>
+        </center>
+        <button class="side-1 login-btn sm-block">Candidate Login</button>
+        <button class="side-2 sm-block" id="backBtn">Back-End Login</button>
+      </session>
+    </div>
+    <session class="loginSession">
+      <button class="backBtn">Back</button>
+      <form action="" method="post" id="fromData">
+        <label for="email" id="emailError"> Email </label>
+        <input
+          type="email"
+          placeholder="Enter Email"
+          name="email"
+          required
+          id="email"
+        />
+        <label for="pass"> Password </label>
+        <input
+          placeholder="Enter password"
+          type="password"
+          required
+          name="password"
+          id="pass"
+        />
+        <button class="submit login" id="btn">Login</button>
+      </form>
+    </session>
+    <div class="footer">
+      Welcome and connect us
+    </div>
+    
+    <script src="js/app.js"></script>
+
+  </body>
+</html>

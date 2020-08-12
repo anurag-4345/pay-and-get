@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Netlify</title>
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <img src="./img/header.jpg" id="logoImg" alt="" />
+      <h1>Welcome Name</h1>
+      <form id="form-area" action="post">
+        <input
+          type="number"
+          name="amount"
+          id="amount"
+          placeholder="Enter the amount and get CashBack"
+        />
+        <input id="recived" type="button" value="Recived" />
+      </form>
+    </header>
+    <!-- <section id="sec">
+      <div class="sub-sec">
+        <div class="block-box" id="sec-1" onclick="showValue(this)">Our Resource</div>
+        <div class="block-box sec-1-1"  onclick="showValue(this)" id="sec-1-1"> our service</div>
+      </div>
+      <div class="sub-sec">
+        <div class="block-box sec-2">30% cashback get 10 tranfer</div>
+        <div class="block-box sec-2-1"> total Receivd amount </div>
+      </div>
+      <div class="sub-sec">
+        <div class="block-box sec-3">contact us</div>
+        <div class="block-box sec-3-1">our support</div>
+      </div>
+    </section>
+    <section class="sec-value" id="sec-value">
+      <div class="sub-sec" id="sec-1-text">
+        <center><h1>Our Resource</h1></center>
+        <div class="block-box">Netlify</div>
+        <div class="block-box">Community Netlify</div>
+        <div class="block-box">Contact us</div>
+        <button onclick="back()">back</button>
+      </div>
+      <div class="sub-sec" id="sec-1-1-text">
+        <center><h1>Our Service</h1></center>
+        <div class="block-box">fast Recived</div>
+        <div class="block-box">get extra cash back</div>
+        <div class="block-box">10000+ Happy Customer</div>
+        <button onclick="back()">back</button>
+      </div>
+    </section> -->
+
+    <script>
+      const amount = document.getElementById('amount')
+      const btn = document.getElementById('recived')
+      const sec = document.getElementById('sec')
+      const formArea = document.getElementById('form-area')
+      const Header = document.getElementById('header')
+      amount.addEventListener('keyup', e => {
+        if (e.target.value != 0) {
+          btn.style.display = 'block'
+          setTimeout(() => {
+            formArea.style.minHeight = '100vh'
+            formArea.style.padding = '0px'
+            header.style.display = 'none'
+            sec.style.display = 'none'
+          }, 400)
+        } else if (e.target.value == '') {
+          btn.style.display = 'none'
+          setTimeout(() => {
+            formArea.style.padding = '30px'
+            sec.style.display = 'block'
+            formArea.style.minHeight = '10vh'
+            header.style.display = 'block'
+          }, 500)
+        }
+      })
+      const sec1 = document.getElementById('sec-1')
+      const noneElements = () => {
+        sec.style.display = 'none'
+        formArea.style.display = 'none'
+        header.style.display = 'none'
+        document.getElementById('sec-value').style.display = 'block'
+      }
+      // sec1.addEventListener('click', e => {
+      //   noneElements()
+      //   document.getElementById('sec-1-text').style.display = 'block'
+      // })
+      const showValue = e => {
+        noneElements()
+        document.getElementById(`${e.id}-text`).style.display = 'block'
+      }
+      const back = () => {
+        document.getElementById('sec-value').style.display = 'none'
+        window.location.reload()
+      }
+    </script>
+  </body>
+</html>

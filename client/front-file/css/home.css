@@ -1,0 +1,75 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.header {
+  background-color: red;
+  text-align: center;
+}
+ #logoImg {
+  margin: 10px 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+}
+.header h1 {
+  color: white;
+  margin: 10px 10px;
+}
+form {
+  padding: 30px;
+  background-color: yellowgreen;
+  display: flex;
+  flex-flow: column wrap;
+}
+form input {
+  margin: 10px 41px 10px 0px;
+  text-align: center;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  border: 1px black solid;
+  padding: 11px 0px;
+  position: relative;
+}
+#recived {
+  display: none;
+}
+section {
+  background-color: rebeccapurple;
+  min-height: 100vh;
+}
+.sub-sec {
+  background-color: aliceblue;
+  margin: 0px 0px 17px 0px;
+  padding: 17px 10px;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 83vw;
+}
+.block-box {
+  margin: 18px 4px;
+  padding: 42px 48px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  border: 2px black double;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 37px;
+}
+#sec-1-text {
+  display: none;
+}
+#sec-1-1-text {
+  display: none;
+}
+.sec-value {
+  display: none;
+  margin: 0px;
+  padding: 0px;
+}
+.delete{
+  color:red;
+  background-color: crimson;
+  font-size:0.6rem;
+}
