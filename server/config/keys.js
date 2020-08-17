@@ -1,5 +1,5 @@
 if(process.env.NODE_ENV == "prodcution"){
-    module.exports = require("./prod")
+    module.exports.URL = require("./prod")
 }else{
-    module.exports = require("./dev")
+    module.exports.URL = require("./dev")
 }
