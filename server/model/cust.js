@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const  MONGODB_URI  = require('../config/keys')
+const MONGODB_URI = require('../config/keys')
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true }).then(() => {
   console.log('mongodb connected')

@@ -1,5 +1,5 @@
-if(process.env.NODE_ENV == "prodcution"){
-    module.exports.URL = require("./prod")
+if(process.env.NODE_ENV === "production"){
+    module.exports = require("./prod").MONGODB_URI
 }else{
-    module.exports.URL = require("./dev")
+    module.exports = require("./dev").URI
 }
