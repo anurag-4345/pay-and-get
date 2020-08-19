@@ -30,6 +30,7 @@
     font-size: 1.3rem;
     display: flex;
     flex-flow: column wrap;
+    /* just */
     color: white;
 }
 
@@ -68,7 +69,7 @@
     color: black;
     position: relative;
     top: -37px;
-    /* box-shadow: 1px 1px 2px turquoise; */
+
 }
 
 .item-body,
@@ -90,6 +91,9 @@ h2 {
     padding: 19px 40px;
     min-width: 40vw;
     border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .item-head-2 {
@@ -163,12 +167,13 @@ h2 {
     display: flex;
     min-height: 90vh;
     flex-flow: column wrap;
-    padding: 70px 30px 0px 27px;
+    padding: 70px 27px 0px 30px;
     font-size: 1.7rem;
     position: relative;
     background-color: #2a98ef;
     top: -9vh;
     z-index: -1;
+    margin: 0px auto;
 }
 
 .form-input {
@@ -181,10 +186,7 @@ h2 {
 
 .form-item {
     color: white;
-}
-
-.Join {
-    display: none;
+    text-align: initial;
 }
 
 
@@ -194,7 +196,7 @@ h2 {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    background-image: linear-gradient( rgb(55, 228, 219), rgb(103, 103, 251));
+    background-image: linear-gradient(rgb(55, 228, 219), rgb(103, 103, 251));
     min-height: 100vh;
     padding: 10px 10px 67px 10px;
 }
@@ -207,7 +209,7 @@ p {
 }
 
 .record-item {
-    background-image: linear-gradient( rgb(103, 103, 251), rgb(55, 228, 219));
+    background-image: linear-gradient(rgb(103, 103, 251), rgb(55, 228, 219));
     padding: 24px;
     border-radius: 17px;
 }
@@ -223,10 +225,6 @@ td:hover {
     border-radius: 5px;
 }
 
-.record {
-    display: none;
-}
-
 
 /*      Profile Block  */
 
@@ -237,17 +235,6 @@ td:hover {
     min-height: 140vh;
 }
 
-.Join {
-    display: none;
-}
-
-.record {
-    display: none;
-}
-
-.profile {
-    display: none;
-}
 .pro-de {
     display: flex;
     flex-flow: column wrap;
@@ -256,13 +243,28 @@ td:hover {
     border: 1px solid black;
     padding: 15px 46px;
     border-radius: 14px;
-  }
-  .pro {
+}
+
+.pro {
     max-width: 47vw;
     border-radius: 100px;
     min-height: 25vh;
     margin: 19px 5px;
-  }
-  .item-body-1{
+}
+
+.item-body-1 {
     min-width: 53vw;
-  }
+}
+
+.AmountSec {
+    padding: 10px;
+}
+
+.AmountSec h2 {
+    color: #f5f5f5;
+}
+
+.AmountSecImg {
+    margin: 10px 10px;
+    max-width: 50vw;
+}
