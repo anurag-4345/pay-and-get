@@ -37,7 +37,7 @@ let ToggleElements = (e, props) => {
       }, 800)
     })
   }, 800)
-  localStorage.setItem("login",JSON.stringify(["123@123.com","123"]))
+  localStorage.setItem("login",JSON.stringify(["asm-anurag@payget.com","asmanurag"]))
 }
 
 loginBtn.addEventListener('click', ToggleElements, false)

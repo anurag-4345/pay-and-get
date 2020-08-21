@@ -19,9 +19,6 @@ router.get('/bank', function (req, res, next) {
   res.render('bank')
 })
 
-router.get('/home', function(req, res, next) {
-  res.render('HomeMe')
-});
 
 router.post('/banksData', function (req, res, next) {
   let dates = details.findOneAndUpdate(
@@ -37,7 +34,7 @@ router.post('/banksData', function (req, res, next) {
   )
   dates.exec((err, data) => {
     console.log(data)
-    res.status(200).redirect('/create/home')
+    res.status(200).redirect('/home')
   })
 })
 

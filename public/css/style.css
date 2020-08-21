@@ -82,14 +82,14 @@
     color: black;
   }
   .footer {
-    /* display:none; */
     margin: 3px -9px;
-    max-width: 100vw;
+    min-width: 100vw;
     background-color: rgb(58, 192, 116);
     padding: 24px 12px;
     font-size: 1.6rem;
-    position: relative;
-    top: 130px;
+    position:fixed;
+    bottom: 0px;
+    left: 0px;
     border-radius: 163px 143px 0px 0px;
     text-align: center;
   }
