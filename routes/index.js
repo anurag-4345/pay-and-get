@@ -15,24 +15,24 @@ const transporter = mailer.createTransport({
     }
 })
 
-const mailOptions = {
-    from: "anuragimportysale@gmail.com",
-    to: "k738342@gmail.com",
-    subject: "welcome mailer",
-    text: "welcome first mail"
-}
+// const mailOptions = {
+//     from: "anuragimportysale@gmail.com",
+//     to: "k738342@gmail.com",
+//     subject: "welcome mailer",
+//     text: "welcome first mail"
+// }
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('login');
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) throw err
-        console.log(info);
+    // transporter.sendMail(mailOptions, (err, info) => {
+    //     if (err) throw err
+    //     console.log(info);
 
-    })
+    // })
 });
 router.get('/home', function(req, res, next) {
-    res.render('homeMe');
+    res.render('homeMe')
 });
 
 router.post('/regs', (req, res, next) => {
