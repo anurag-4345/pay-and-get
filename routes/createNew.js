@@ -20,7 +20,7 @@ router.get('/bank', function (req, res, next) {
 })
 
 router.get('/home', function(req, res, next) {
-  res.render('homeMe')
+  res.render('HomeMe')
 });
 
 router.post('/banksData', function (req, res, next) {
