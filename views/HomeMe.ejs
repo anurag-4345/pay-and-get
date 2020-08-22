@@ -173,7 +173,7 @@
         <i class="fa fa-question" aria-hidden="true"></i> FAQ
       </div>
     </section>
-   
+
   </section>
   <section class="profile">
     <section class="item-head-1">
@@ -181,24 +181,20 @@
         <img class="pro" src="/images/header.jpg" alt="" srcset="" />
         <h1>Ram</h1>
       </div>
-      <div class="item-body-1">
-        Cashback list <i class="fa fa-arrow-right" aria-hidden="true"></i>
-      </div>
       <div class="item-body-1">Profile <i class="fa fa-arrow-right"></i></div>
-      <div class="item-body-1">
-        Bank <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      <div class="item-body-1">Bank <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </div>
       <div class="item-body-1">
         Payment setting <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </div>
       <div class="item-body-1">
-        Security Setting <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        Setting <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </div>
       <div class="item-body-1">
         Payment reminders <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </div>
       <div class="item-body-1">
-        saved address <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        QR code Order <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </div>
       <div class="item-body-1">
         Chat Setting <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -223,13 +219,12 @@
     </div>
   </footer>
 </body>
-<script src="/javascripts/homeME.js"></script>
 <script>
   function changeAndShow(event) {
     const payBtn = document.getElementById("payBtn")
     const p = document.getElementById("spanAmount");
     const b1 = document.getElementsByClassName("b1");
-    if (event.value <= 0 || event.value === null ) {
+    if (event.value <= 0 || event.value === null) {
       p.style.display = "none"
       payBtn.style.display = "none"
       b1[0].style.display = ""
@@ -244,6 +239,36 @@
       payBtn.style.display = "flex"
     }
   }
+  // footer logic
+  const home = document.getElementsByClassName('home')
+  const join = document.getElementsByClassName('Join')
+  const record = document.getElementsByClassName('record')
+  const profile = document.getElementsByClassName('profile')
+
+  const view_page = params => {
+    if (params === 1) {
+      home[0].style.display = 'block'
+      join[0].style.display = 'none'
+      record[0].style.display = 'none'
+      profile[0].style.display = 'none'
+    } else if (params === 2) {
+      home[0].style.display = 'none'
+      join[0].style.display = 'block'
+      record[0].style.display = 'none'
+      profile[0].style.display = 'none'
+    } else if (params === 3) {
+      home[0].style.display = 'none'
+      join[0].style.display = 'none'
+      record[0].style.display = 'block'
+      profile[0].style.display = 'none'
+    } else if (params === 4) {
+      home[0].style.display = 'none'
+      join[0].style.display = 'none'
+      record[0].style.display = 'none'
+      profile[0].style.display = 'block'
+    }
+  }
+  view_page()
 </script>
 
 </html>
