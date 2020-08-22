@@ -3,6 +3,7 @@ const btn = document.getElementById('recived')
 const sec = document.getElementById('sec')
 const formArea = document.getElementById('form-area')
 const Header = document.getElementById('header')
+
 amount.addEventListener('keyup', e => {
   if (e.target.value != 0) {
     btn.style.display = 'block'
@@ -22,6 +23,7 @@ amount.addEventListener('keyup', e => {
     }, 500)
   }
 })
+
 const sec1 = document.getElementById('sec-1')
 const noneElements = () => {
   sec.style.display = 'none'
@@ -29,10 +31,7 @@ const noneElements = () => {
   header.style.display = 'none'
   document.getElementById('sec-value').style.display = 'block'
 }
-// sec1.addEventListener('click', e => {
-//   noneElements()
-//   document.getElementById('sec-1-text').style.display = 'block'
-// })
+
 const showValue = (e) =>{
   noneElements()
   document.getElementById(`${e.id}-text`).style.display = 'block'

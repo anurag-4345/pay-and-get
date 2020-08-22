@@ -23,12 +23,11 @@ const mailer = require("nodemailer");
 // }
 
 /* GET home page. */
-
-router.get('/home', function(req, res, next) {
-    res.render('HomeMe')
-});
 router.get('/home', function(req, res, next) {
     res.render('homeMe')
+});
+router.get('/', function(req, res, next) {
+    res.render('login')
 });
 
 router.post('/regs', (req, res, next) => {

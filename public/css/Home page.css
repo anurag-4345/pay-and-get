@@ -39,6 +39,8 @@
     padding: 10px 10px;
     background-color: white;
     transition: all 0.7s ease 0s;
+    justify-content: center;
+    margin: 10px auto;
 }
 
 .inputTag:hover {
@@ -88,8 +90,12 @@ h2 {
     font-size: 1.4rem;
     margin: 10px 0px;
     padding: 19px 40px;
-    min-width: 40vw;
-    border-radius: 20px;
+    justify-content: space-between;
+    display: flex;
+    border-radius: 23px;
+    border: 1px solid black;
+    min-width: 53vw;
+    cursor: pointer;
 }
 
 .item-head-2 {
@@ -99,16 +105,18 @@ h2 {
     white-space: nowrap;
     padding: 10px;
     margin: auto;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 .item-body-2 {
-    border: 1px solid;
     border-radius: 25px;
     padding: 25px 15px;
     background-color: white;
-    margin: 10px;
+    margin: 10px 19px;
     color: #688bf5;
+    min-width: 40vw;
+    text-align: center;
+    font-size: 1.8rem;
 }
 
 .item-body-2:hover {
@@ -194,7 +202,7 @@ h2 {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    background-image: linear-gradient( rgb(55, 228, 219), rgb(103, 103, 251));
+    background-image: linear-gradient(rgb(55, 228, 219), rgb(103, 103, 251));
     min-height: 100vh;
     padding: 10px 10px 67px 10px;
 }
@@ -207,9 +215,11 @@ p {
 }
 
 .record-item {
-    background-image: linear-gradient( rgb(103, 103, 251), rgb(55, 228, 219));
+    background-image: linear-gradient(rgb(103, 103, 251), rgb(55, 228, 219));
     padding: 24px;
     border-radius: 17px;
+    min-width: 80vw;
+    margin: 2px auto;
 }
 
 .record-item th,
@@ -248,6 +258,7 @@ td:hover {
 .profile {
     display: none;
 }
+
 .pro-de {
     display: flex;
     flex-flow: column wrap;
@@ -256,13 +267,35 @@ td:hover {
     border: 1px solid black;
     padding: 15px 46px;
     border-radius: 14px;
-  }
-  .pro {
+}
+
+.pro {
     max-width: 47vw;
     border-radius: 100px;
     min-height: 25vh;
     margin: 19px 5px;
-  }
-  .item-body-1{
+}
+
+.item-body-1 {
     min-width: 53vw;
-  }
+}
+
+.pro-de {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    max-width: 88vw;
+    border: 1px solid black;
+    padding: 15px 46px;
+    border-radius: 14px;
+}
+
+.pro {
+    max-width: 47vw;
+    border-radius: 100px;
+    min-height: 25vh;
+    margin: 19px 5px;
+}
+.b1{
+    margin:20px auto;
+}
