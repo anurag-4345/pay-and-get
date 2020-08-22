@@ -24,7 +24,7 @@ const mailer = require("nodemailer");
 
 /* GET home page. */
 router.get('/home', function(req, res, next) {
-    res.render('homeMe')
+    res.render('HomeMe')
 });
 router.get('/', function(req, res, next) {
     res.render('login')
