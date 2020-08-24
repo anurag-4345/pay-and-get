@@ -299,3 +299,6 @@ td:hover {
 .b1{
     margin:20px auto;
 }
+.remove-extra{
+    text-decoration: none;
+}
