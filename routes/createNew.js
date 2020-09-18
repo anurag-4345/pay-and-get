@@ -33,7 +33,7 @@ router.post('/banksData', function (req, res, next) {
     }
   )
   dates.exec((err, data) => {
-    console.log(data)
+    if (err) throw err;
     res.status(200).redirect('/home')
   })
 })

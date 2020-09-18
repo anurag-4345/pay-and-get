@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
-const { URI, URL } = require('../config/keys')
+const { URL } = require('../config/keys')
 
-mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log('mongodb connected')
-}).catch(err=> console.log(err))
+}).catch(err => console.log(err))
 
 const modalRecord = new mongoose.Schema({
   name: String,
@@ -15,10 +15,10 @@ const modalRecord = new mongoose.Schema({
   date: Date,
   status: Boolean,
   BDetails: {
-      B_name: String,
-      BranchName: String,
-      ifscCode: String,
-      account: Number
+    B_name: String,
+    BranchName: String,
+    ifscCode: String,
+    account: Number
   },
   amount: Array
 })

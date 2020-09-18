@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 const { details } = require("../model/cust");
-const { pass } = require("../config/keys")
 const mailer = require("nodemailer");
 
 // const transporter = mailer.createTransport({
@@ -23,11 +22,18 @@ const mailer = require("nodemailer");
 // }
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
+router.get('/home', function (req, res, next) {
     res.render('HomeMe')
 });
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     res.render('login')
+});
+
+router.get('/all', function (req, res, next) {
+    details.find({}, (err, result) => {
+        if (err) throw err;
+        res.send(result)
+    })
 });
 
 router.post('/regs', (req, res, next) => {

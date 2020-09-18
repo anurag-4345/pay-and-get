@@ -9,4 +9,10 @@ route.get("/cashback",(req,res)=>{
     res.render("cashBack");
 })
 
+route.get("/loan",(req,res)=>{
+    res.render("loan");
+})
+
+
+
 module.exports = route
