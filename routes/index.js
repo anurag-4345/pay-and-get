@@ -13,7 +13,7 @@ const mailer = require("nodemailer");
 //         pass: pass
 //     }
 // })
-
+ 
 // const mailOptions = {
 //     from: "anuragimportysale@gmail.com",
 //     to: "k738342@gmail.com",
